@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SO-sdfsdk</string>
+
+    <string name="welcome">Cliquez sur le bouton pour lancer la génération.</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">So Sdf Sdk</string>
+    <string name="title_activity_random">RandomActivity</string>
+    <string name="loading">Génération en cours...</string>
+    <string name="gobtn">J\'ai faim !</string>
+    <string name="more">Autre chose</string>
+    <string name="no_wifi">Vérifiez votre connexion internet avant de continuer</string>
+    <string name="no_wifi_title">Le WEB !</string>
+</resources>
