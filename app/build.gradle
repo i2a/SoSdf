@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "ch.hefr.tic.hefr_mylocation"
+        applicationId "ch.i2a.sosdf"
         minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
