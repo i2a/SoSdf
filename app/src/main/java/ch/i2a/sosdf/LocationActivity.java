@@ -41,8 +41,11 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        // connects to the google api
         buildGoogleApiClient();
+        // make an asyncrounous call to get the map. Will then call onMapReady()
         mapFragment.getMapAsync(this);
+        // retrieves the intent from the caller
         randomIntent = getIntent();
     }
 
@@ -58,6 +61,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
         mMap.setOnMapLongClickListener(this);
     }
 
+    // Build the google API
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -75,6 +79,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
             currentLatLng = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
         } else {
             Log.d("nkcr", "Null location");
+            // The default location, at HEIA-FR
             currentLatLng = new LatLng(46.792529, 7.159996);
         }
         // Get the place
@@ -110,6 +115,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     protected void onStart() {
         super.onStart();
+        // Will then capp onConnected() if ok
         mGoogleApiClient.connect();
     }
 
@@ -125,6 +131,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     @Override
     public void onRoutingSuccess(PolylineOptions mPolyOptions, Route route) {
+        // Draw the route line
         PolylineOptions polyOptions = new PolylineOptions();
         polyOptions.color(Color.BLUE);
         polyOptions.width(10);
@@ -134,6 +141,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     /** Called when the user clicks the Send button */
     public void again(View view) {
+        // Back to randomActivity
         Intent intent = new Intent(this, RandomActivity.class);
         startActivity(intent);
     }
