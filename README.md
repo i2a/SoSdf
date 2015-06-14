@@ -1,6 +1,6 @@
 # SoSdf
 
-Get your next place to eat
+Get your next place to eat. Please contribute to the places, see the [other repo](https://github.com/i2a/SoSdf-static).
 
 ---
 
